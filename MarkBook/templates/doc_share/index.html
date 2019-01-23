@@ -1,0 +1,46 @@
+{% extends 'master_page/base.html' %}
+{% load static %}
+
+{% block title %} MarkBook-文档分享  {% endblock %}
+
+{% block start_js %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/share_index.css" %}">
+
+{% endblock %}
+
+
+{% block sub_title %} MarkBook {% endblock %}
+
+
+{% block content %}
+    <div class="title_box">
+        <p class="title">文档分享： 您可以选择直接上传文件或者在线编辑内容后添加</p>
+        <p class="title">友情提示： * 分享文档前请先完善账号信息，否则会被认为时匿名上传
+        </p>
+        <p class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;* 分享文档可提高您的荣誉值，当其他用户下载时也会带给您奖励</p>
+
+    </div>
+    <div class="share_doc">
+
+            <div class="item-share write_doc">
+                <a href="###" class="item-share-a">
+                    <img src="{% static "images/icons/upload_file.svg" %}" class="op_icon" alt="">
+                    <a href="###" class="file">上传文件<input type="file" class="share_btn" placeholder="上传文件"></a>
+                </a>
+            </div>
+
+            <div class="item-share upload_doc">
+                <a href="###" class="item-share-a">
+                    <img src="{% static "images/icons/add_share.svg" %}" class="op_icon" alt="">
+                    <p class="add_doc_p">添加文档</p>
+                </a>
+            </div>
+
+    </div>
+
+{% endblock %}
+
+{% block end_js %}
+
+{% endblock %}

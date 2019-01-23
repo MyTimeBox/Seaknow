@@ -1,0 +1,55 @@
+<ul class="list-group" id="accordion02">
+    <li class="list-group-item panel">
+        <a href="###" class="left-submenu active" id="collapseListGroupHeading15"
+           data-toggle="collapse" data-target="#collapseListGroup15" role="tab"
+           data-parent="#accordion02">
+            <i class="iconfont icon-menu01 fs18 mr_15 fl"></i>首页
+            <span class="fr iconfont-height">
+                <i class="iconfont icon-jiantou_down fs18"></i>
+            </span>
+        </a>
+        <div id="collapseListGroup15" role="tabpanel"
+             aria-labelledby="collapseListGroupHeading15" class="collapse in">
+            <ul class="list-group menu-list-group-left">
+
+                <li class="{% if "/doc_view/" in request.path  %}active {% endif %}">
+                    <a href="/doc_view/index" class="menu-item-left" data-target="index.html">
+                        文档查看
+                    </a>
+                </li>
+
+                <li class="{% if "/doc_share/" in request.path %}active {% endif %}">
+                    <a href="/doc_share/index" class="menu-item-left" data-target="index.html">
+                        文档分享
+                    </a>
+                </li>
+
+{#                <li class="">#}
+{#                    <a href="###" class="menu-item-left" data-target="index.html">#}
+{#                        优质推荐#}
+{#                    </a>#}
+{#                </li>#}
+
+{#                <li class="">#}
+{#                    <a href="###" class="menu-item-left" data-target="index.html">#}
+{#                        微故事栈#}
+{#                    </a>#}
+{#                </li>#}
+
+                <li class="{% if "/site_analysis/" in request.path %}active {% endif %}">
+                    <a href="/site_analysis/index" class="menu-item-left">
+                        站内分析
+                    </a>
+                </li>
+
+
+{#                <li class="">#}
+{#                    <a href="###" class="menu-item-left" data-target="index.html">#}
+{#                        本站小店#}
+{#                    </a>#}
+{#                </li>#}
+
+            </ul>
+        </div>
+    </li>
+</ul>

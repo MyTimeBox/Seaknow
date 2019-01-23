@@ -1,0 +1,74 @@
+.ap-count-text {
+    position: relative;
+    top: 42%;
+    left: 60%;
+}
+
+.title-style {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 21px;
+}
+
+.default-text-style {
+    font-size: 16px;
+    color: #0c0c0c;
+}
+
+.chart-item-height {
+    height: 360px;
+}
+
+.chart-container-small {
+    height: 187px;
+    display: flex;
+    padding-right: 5px;
+}
+
+/*.chart-container-middle_small {*/
+    /*height: 205px;*/
+    /*display: flex;*/
+    /*padding: 5px;*/
+    /*width: 100%;*/
+/*}*/
+
+.chart-container-middle {
+    height: 240px;
+    display: flex;
+    padding: 5px;
+    width: 100%;
+}
+
+/*.chart-container-middle-normal {*/
+    /*height: 330px;*/
+    /*display: flex;*/
+    /*width: 100%;*/
+    /*padding: 5px;*/
+/*}*/
+
+.chart-container-normal {
+    height: 420px;
+    display: flex;
+    width: 100%;
+    padding: 5px;
+}
+
+.chart-container-big {
+    height: 510px;
+    display: flex;
+    padding: 5px;
+}
+
+.chart-content-style {
+    flex: 1;
+}
+
+.button-group-container {
+    padding: 10px;
+    text-align: left;
+}
+
+.button-group-item {
+    float: right
+}

@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static "images/icon.ico" %}">
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/iconfont.css" %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static "css/linecons.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/font-awesome.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/xenon-core.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/xenon-forms.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/xenon-components.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/xenon-skins.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/custom.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/charts.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/gh-buttons.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap-datetimepicker.css" %}">
+
+    <!-- Bottom Scripts -->
+    <script src="{% static "js/common_js/jquery-1.11.1.min.js" %}"></script>
+    <script src="{% static "js/common_js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/common_js/TweenMax.min.js" %}"></script>
+    <script src="{% static "js/common_js/resizeable.js" %}"></script>
+    <script src="{% static "js/common_js/joinable.js" %}"></script>
+    <script src="{% static "js/common_js/xenon-api.js" %}"></script>
+    <script src="{% static "js/common_js/xenon-toggles.js" %}"></script>
+    <!-- Imported scripts on this page -->
+    <script src="{% static "js/common_js/xenon-widgets.js" %}"></script>
+    <script src="{% static "js/common_js/globalize.min.js" %}"></script>
+    <script src="{% static "js/common_js/dx.chartjs.js" %}"></script>
+    <script src="{% static "js/common_js/toastr.min.js" %}"></script>
+    <script src="{% static "js/common_js/xenon-custom.js" %}"></script>
+    <script src="{% static "js/common_js/bootstrap.js" %}"></script>
+    <script src="{% static "js/common_js/echarts.js" %}"></script>
+    {% block start_js %}
+
+    {% endblock %}
+    <script>
+        $.ajaxSetup({
+            data: {csrfmiddlewaretoken: '{{ csrf_token }}'},
+        });
+        var static_url = '{{ STATIC_URL }}';
+        var csrf_token = '{{ csrf_token }}';
+        $("form").each(function () {
+            $(this).attr("autocomplete", "off")
+        })
+    </script>
+
+</head>
+
+
+<body>
+<div class="wrapper">
+    <div class="management-header">
+        <div class="header-left">
+{#            <img class="mr_20 ml_15" src=" {% static "images/logo@2x.png" %} "/>#}
+            <strong class="fl fs16 ml_15">{% block sub_title %} {% endblock %}
+            </strong>
+        </div>
+        <div class="header-right dropdown">
+            <a href="###" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="{% static "images/icon.ico" %}" class="user-img">
+                <span class="username">风尘化雾</span>
+                <span class="c_fff"><i class="iconfont icon-jiantou_down"></i></span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-n">
+                <li><a href="###" class="top-edit" data-toggle="modal" data-target="#pwdModel"><i
+                        class="iconfont icon-dongjiejine mr_10"></i>修改密码</a></li>
+                <li><a href="###" class="top-edit"><i class="iconfont icon-tuichu mr_10"></i>退出登录</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="management-content">
+        <div class="sidebar" id="sidebar">
+            <div class="panel-group management_left-menu left-submenu active" id="accordion" role="tablist"
+                 aria-multiselectable="true">
+                <div class="panel panel-default left-menu-box">
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                         aria-labelledby="headingOne">
+                        {% block sidebar %}
+                            {% include 'master_page/_sidebar.html' %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="container" style="min-height: 950px;">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+</body>
+{% block end_js %}
+{% endblock %}
+</html>

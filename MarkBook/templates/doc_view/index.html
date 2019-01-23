@@ -1,0 +1,71 @@
+{% extends 'master_page/base.html' %}
+{% load static %}
+
+{% block title %} MarkBook-文档查看  {% endblock %}
+
+{% block start_js %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+    <script src="{% static 'js/common_js/pdfobject.min.js' %}"></script>
+{% endblock %}
+
+
+{% block sub_title %} MarkBook {% endblock %}
+
+
+{% block content %}
+{#    页面左侧内容#}
+    <div class="content_left">
+        <div class="search_container">
+                <div class='search_input'>
+                    <span class="span1">文档检索</span>
+                    <input type="text" class="search_btn" name="file" placeholder=" 请输入关键字">
+                    <button type="button" class="submit">搜 索</button>
+                </div>
+        </div>
+
+        <span class="span1">文档列表</span>
+        <hr class="hr1"/>
+        <div class="book_container">
+            <div class="book_list">
+                {% include  'doc_view/_book_list.html' %}
+            </div>
+
+        </div>
+    </div>
+{#    页面右侧pdf展示框#}
+    <div class="content_right">
+    <div id="pdf_container">
+            <div class="view_box">
+                阅 读 区
+            </div>
+    </div>
+    </div>
+{% endblock %}
+
+{% block end_js %}
+<script>
+    $('.book_name').on('click', function () {
+        var path = $(this).data('src');
+        var options = {
+           pdfOpenParams: { scrollbars: '0',
+                            toolbar: '0',
+                            statusbar: '0'},
+        };
+
+        //禁用工具栏代码
+        PDFObject.embed(path, "#pdf_container", options);
+    })
+
+    //提交搜索
+    $('.submit').on('click', function () {
+        var book = $('.search_btn').val();
+        $.ajax({url:'/doc_view/index', 
+                data: {'book': book},
+                type: 'post'}
+                ).done(function (data) {
+            $('.book_list').html(data)
+        })
+    })
+</script>
+{% endblock %}

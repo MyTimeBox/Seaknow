@@ -1,0 +1,76 @@
+  .content_left{
+      float: left;
+      width: 37%;
+  }
+  .content_right{
+      float: right;
+      width: 60%;
+  }
+  #pdf_container {
+       width: 100%;
+       margin-top: 20px;
+       height: 750px;
+       border: 1px solid rgba(0,0,0,.1);
+   }
+   .search_container{
+       width: 100%;
+       height: 60px;
+       margin-top: 20px;
+       margin-left: 0px;
+   }
+   .span1{
+       line-height: 30px;
+       font-size: 15px;
+       color: lightslategray;
+   }
+
+   .submit{
+       height: 30px;
+       width: 10%;
+       margin-left: 5px;
+       background-color: lightgrey;
+       border-radius: 3px;
+       font-size: 15px;
+       color: lightslategray;
+   }
+
+   .search_btn{
+        margin-left: 10px;
+        width: 70%;
+        line-height: 30px;
+        background-color: lightgrey;
+        font-size: 15px;
+        border-radius: 3px;
+    }
+   .hr1{
+       height:2px;
+       border:none;
+       border-top:2px solid lightgrey;
+   }
+   .book_info{
+       margin-left: 9px;
+       margin-top: 10px;
+       width: 30%;
+       height: 180px;
+       border: 1px solid lightgrey;
+       display: inline-block;
+   }
+  /*.book_list>.book_info:first-child{*/
+       /*margin-left: 0px;*/
+   /*}*/
+   .book_img{
+       width: 100%;
+       height: 155px;
+   }
+   .span2{
+       margin-top: 10px;
+   }
+   .no_book{
+       margin-top: 50px;
+       margin-left: 30%;
+   }
+   .view_box{
+       margin: 260px 300px;
+       font-size: 19px;
+       color: lightgrey;
+   }

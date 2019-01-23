@@ -1,0 +1,16 @@
+
+{% if books|length > 0 %}
+{% for book in books %}
+                    <div class="book_info">
+                        <a href="###">
+                            <img src="{{ book.img_url }}" class="book_img" alt="">
+                        </a>
+                        <hr class="hr1" />
+                        <span class="span2">
+                            <a href="###" class="book_name" data-src="{{ book.file_path }}">{{ book.name }}</a>
+                        </span>
+                    </div>
+{% endfor %}
+{% else %}
+    <p class="no_book">对不起，暂无与此关键字相关的书籍</p>
+{% endif %}
